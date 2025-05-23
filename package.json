@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@nguniversal/module-map-ngfactory-loader": "^8.2.6",
+    "cors": "^2.8.5"
+  }
+}
