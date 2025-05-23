@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rólam</title>
+</head>
+<body>
+<div class="profil-container">
+  <h1>Profilom</h1>
+
+  <div class="profilkep-container">
+    <img
+      [src]="uploadedImage || 'assets/profil_kep_alap.jpg'"
+      alt="Profil kép"
+      class="profilkep"
+    />
+  </div>
+
+  <div class="feltoltes-container">
+    <button class="upload-button" color="primary" mat-raised-button>
+      <label class="upload-label" for="kepfeltoltes">Kép feltöltése</label>
+    </button>
+    <input (change)="onImageUpload($event)" accept="image/*" hidden id="kepfeltoltes" type="file"/>
+  </div>
+
+  <form (ngSubmit)="onSave()" [formGroup]="profileForm" class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Felhasználónév</mat-label>
+      <input formControlName="username" matInput placeholder="Felhasználónév">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Vezetéknév</mat-label>
+      <input formControlName="firstname" matInput placeholder="Vezetéknév">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Keresztnév</mat-label>
+      <input formControlName="lastname" matInput placeholder="Keresztnév">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput placeholder="Email" type="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Telefonszám</mat-label>
+      <input formControlName="phone" matInput placeholder="Telefonszám" type="tel">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Szerepkör</mat-label>
+      <mat-select formControlName="role">
+        <mat-option *ngFor="let key of roleKeys" [value]="key">{{ key }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Bio</mat-label>
+      <textarea formControlName="bio" matInput placeholder="Írj magadról néhány dolgot"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Munkahely</mat-label>
+      <input formControlName="munkahely" matInput placeholder="Add meg a munkahelyed nevét">
+    </mat-form-field>
+
+    <button
+      [disabled]="!profileForm.valid || isUpdating"
+      class="custom-button"
+      mat-raised-button
+      type="submit">
+      Mentés
+    </button>
+
+  </form>
+</div>
+</body>
+</html>

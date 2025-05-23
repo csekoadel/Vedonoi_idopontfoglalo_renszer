@@ -1,0 +1,87 @@
+<div class="container">
+  <h1>Szabad Időpontok Beállítása</h1>
+
+  <div class="main-content">
+    <div class="left-section">
+      <mat-card class="calendar-card modern-calendar">
+        <mat-calendar
+          (selectedChange)="selectedDate = $event; onDateSelected()"
+          [dateFilter]="dateFilter"
+          [selected]="selectedDate"
+        ></mat-calendar>
+      </mat-card>
+
+      <div class="input-container">
+        <mat-form-field appearance="outline" class="time-picker-field">
+          <mat-label>Kezdési Idő</mat-label>
+          <input
+            [(ngModel)]="kezdesiIdo"
+            [format]="24"
+            [ngxTimepicker]="startTimePicker"
+            matInput
+            placeholder="HH:mm"
+            readonly
+          />
+          <ngx-material-timepicker #startTimePicker [format]="24"></ngx-material-timepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="time-picker-field">
+          <mat-label>Befejezési Idő</mat-label>
+          <input
+            [(ngModel)]="befejezesiIdo"
+            [format]="24"
+            [ngxTimepicker]="endTimePicker"
+            matInput
+            placeholder="HH:mm"
+            readonly
+          />
+          <ngx-material-timepicker #endTimePicker [format]="24"></ngx-material-timepicker>
+        </mat-form-field>
+
+        <button (click)="addAvailability()" class="add-button" color="primary" mat-raised-button>Hozzáadás</button>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="services-container">
+        <h1 class="cim">Választható szolgáltatások</h1>
+        <div class="services-list">
+          <mat-checkbox
+            *ngFor="let service of servicesList"
+            [(ngModel)]="selectedServices[service.name]"
+            class="service-checkbox">
+            {{ service.name }}
+          </mat-checkbox>
+        </div>
+      </div>
+
+      <h1 class="cim">Megadott Időpontok</h1>
+      <mat-list class="availability-list">
+        <mat-list-item *ngFor="let item of idopontok" class="list-item">
+          <div class="list-content">
+            <span><strong>Nap:</strong> {{ item.hetNapjai }}</span>
+            <span><strong>Kezdési Idő:</strong> {{ item.kezdesiIdo }}</span>
+            <span><strong>Befejezési Idő:</strong> {{ item.befejezesiIdo }}</span>
+
+            <span><strong>Szolgáltatás:</strong>
+              <span *ngIf="item.szolgaltatasok && item.szolgaltatasok.length > 0">
+                <ul>
+                  <li *ngFor="let szolgaltatas of item.szolgaltatasok">
+                    {{ szolgaltatas }}
+                  </li>
+                </ul>
+              </span>
+              <span *ngIf="!item.szolgaltatasok || item.szolgaltatasok.length === 0">Nincs szolgáltatás</span>
+            </span>
+
+            <button (click)="deleteAvailability(item)" class="delete-button" color="warn" mat-icon-button>
+              <mat-icon>delete</mat-icon>
+            </button>
+
+            <pre>{{ item.szolgaltatasok | json }}</pre>
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

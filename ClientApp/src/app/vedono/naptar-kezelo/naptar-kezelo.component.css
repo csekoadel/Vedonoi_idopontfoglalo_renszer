@@ -1,0 +1,218 @@
+.container {
+  padding: 20px;
+  height: 100vh;
+}
+
+h1 {
+  color: black !important;
+  font-family: 'Dancing Script', cursive !important;
+  padding: 10px !important;
+  font-size: 34px !important;
+  text-align: center !important;
+}
+
+h1.cim {
+  color: black !important;
+  font-family: 'Dancing Script', cursive !important;
+  padding: 3px !important;
+  font-size: 25px !important;
+  text-align: left !important;
+}
+
+.main-content {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.left-section {
+  flex: 0 0 auto;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar-card {
+  width: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.modern-calendar {
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.time-picker-field {
+  width: 100%;
+}
+
+.add-button {
+  height: 48px;
+  font-size: 16px;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.services-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service-checkbox {
+  font-size: 16px;
+}
+
+
+.list-item .time {
+  color: #333;
+}
+
+.list-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.delete-button {
+  color: #2b3035;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.delete-button mat-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.list-item {
+  font-size: 14px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.services-label {
+  font-weight: bold;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+li {
+  font-size: 14px;
+  color: #333;
+  padding: 2px 0;
+}
+
+
+.list-item {
+  font-size: 14px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.services-label {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .left-section {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .right-section {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .input-container {
+    padding: 15px;
+  }
+}
+
+.right-section[_ngcontent-ng-c576731733] {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timepicker-button[_ngcontent-ng-c2291525576] {
+  display: inline-block;
+  height: 26px;
+  min-width: 88px;
+  line-height: 36px;
+  border: 12px;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  color: #00bfff;
+}
+
+

@@ -1,0 +1,94 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profil-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container mat-form-field {
+  width: 100%;
+  display: flex;
+}
+
+.mat-form-field-label-wrapper {
+  flex: 1;
+}
+
+.feltoltes-container,
+.profilkep-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.profilkep {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+h1 {
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  padding: 15px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.custom-button {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.custom-button:hover {
+  background-color: #388e3c;
+}
+
+.custom-button[disabled] {
+  background-color: #9e9e9e;
+  color: #e0e0e0;
+}
+
+.rendelesi-ido-container {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.rendelesi-ido-container mat-form-field {
+  flex: 1;
+}
+
+.feltoltes-container {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.upload-label {
+  cursor: pointer;
+}
+
+

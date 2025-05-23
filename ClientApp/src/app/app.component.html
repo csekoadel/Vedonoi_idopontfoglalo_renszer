@@ -1,0 +1,44 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <app-menu
+      (onCloseSidenav)="onClose($event, sidenav)"
+      (onLogout)="logout()"
+      (selectedPage)="changePage($event)"
+      [currentPage]="page"
+      [currentRole]="currentRole"
+      [loggedInUser]="loggedInUser"
+    ></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Fejléc -->
+    <mat-toolbar>
+      <div fxHide.gt-xs>
+        <button (click)="onToggleSideNav(sidenav)" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="cim-container">
+        <div class="cim">Védőnő időpontfoglalás</div>
+      </div>
+      <div class="menu-container" fxFlex fxHide.xs fxLayout fxLayoutAlign="center">
+        <ul class="navigation" fxLayout fxLayoutGap="10px">
+          <li *ngIf="!loggedInUser"><a routerLink="/belepes">Belépés</a></li>
+          <li *ngIf="loggedInUser"><a (click)="logout()" routerLink="/fooldal">Kilépés</a></li>
+          <li *ngIf="!loggedInUser"><a routerLink="/regisztracio">Regisztráció</a></li>
+          <li *ngIf="!loggedInUser"><a routerLink="/fooldal">Főoldal</a></li>
+          <li *ngIf="currentRole === 'Szulo'"><a routerLink="/foglalas-elso">Foglalás</a></li>
+          <li *ngIf="currentRole === 'Szulo'"><a routerLink="/foglalasaim">Foglalásaim</a></li>
+          <li *ngIf="currentRole === 'Vedono'"><a routerLink="/dashboard">Dashboard</a></li>
+          <li *ngIf="currentRole === 'Vedono' || currentRole === 'Adminisztrator'">
+            <a [routerLink]="['/foglalasok-listaja', vedonoId]">Foglalások Listája</a>
+          </li>
+          <li *ngIf="currentRole === 'Vedono'"><a routerLink="/profil">Profil</a></li>
+          <li *ngIf="currentRole === 'Szulo'"><a routerLink="/profilSz">Profil</a></li>
+          <li *ngIf="currentRole === 'Vedono'"><a routerLink="/naptar-kezelo">Naptár</a></li>
+          <li *ngIf="currentRole === 'Vedono'"><a [routerLink]="['/Idopont', vedonoId]">Időpont</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

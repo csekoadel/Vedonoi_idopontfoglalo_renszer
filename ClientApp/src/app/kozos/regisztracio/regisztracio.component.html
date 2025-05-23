@@ -1,0 +1,54 @@
+<div class="main_component">
+  <div class="div-flex">
+    <h1>Regisztráció</h1>
+    <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput required type="email"/>
+        <mat-error *ngIf="signUpForm.get('email')?.hasError('required')">Az email megadása kötelező</mat-error>
+        <mat-error *ngIf="signUpForm.get('email')?.hasError('email')">Érvénytelen email formátum</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Jelszó</mat-label>
+        <input formControlName="password" matInput required type="password"/>
+        <mat-error *ngIf="signUpForm.get('password')?.hasError('required')">A jelszó megadása kötelező</mat-error>
+        <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength')">A jelszónak legalább 6 karakter hosszúnak
+          kell lennie
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Mégegyszer jelszó</mat-label>
+        <input formControlName="rePassword" matInput required type="password"/>
+        <mat-error *ngIf="signUpForm.get('rePassword')?.hasError('required')">A jelszó megadása kötelező</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Keresztnév</mat-label>
+        <input formControlName="keresztnev" matInput required type="text"/>
+        <mat-error *ngIf="signUpForm.get('keresztnev')?.hasError('required')">A keresztnév megadása kötelező</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Vezetéknév</mat-label>
+        <input formControlName="vezeteknev" matInput required type="text"/>
+        <mat-error *ngIf="signUpForm.get('vezeteknev')?.hasError('required')">A vezetéknév megadása kötelező</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Felhasználónév</mat-label>
+        <input formControlName="felhasznalonev" matInput required type="text"/>
+        <mat-error *ngIf="signUpForm.get('felhasznalonev')?.hasError('required')">A felhasználónév megadása kötelező
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Szerepkör</mat-label>
+        <mat-select formControlName="szerepkor" required>
+          <mat-option *ngFor="let role of szerepkorok" [value]="role.label">
+            {{ role.label }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="signUpForm.get('szerepkor')?.hasError('required')">
+          A szerepkör kiválasztása kötelező
+        </mat-error>
+      </mat-form-field>
+      <button color="primary" mat-raised-button type="submit">Regisztráció</button>
+    </form>
+  </div>
+</div>

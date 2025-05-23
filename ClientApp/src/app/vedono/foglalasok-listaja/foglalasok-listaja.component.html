@@ -1,0 +1,59 @@
+<div *ngIf="bookings.length > 0; else noDataTemplate" class="bookings-container">
+  <h1>Foglalások Listája</h1>
+
+  <table class="bookings-table">
+    <thead>
+    <tr>
+      <th>Név</th>
+      <th>Dátum</th>
+      <th>Időpont</th>
+      <th>Státusz</th>
+      <th>Művelet</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let booking of bookings">
+      <td>{{ booking.felhasznaloNev }}</td>
+      <td>{{ booking.datum | date: 'yyyy-MM-dd' }}</td>
+      <td>{{ booking.kezdesiIdo }} - {{ booking.befejezesiIdo }}</td>
+      <td>
+          <span [ngClass]="booking.statusz.toLowerCase()" class="status">
+            {{ booking.statusz }}
+          </span>
+      </td>
+      <td>
+        <button (click)="elutasitFoglalas(booking.id)"
+                [disabled]="booking.statusz === 'Elutasítva'"
+                [class.disabled]="booking.statusz === 'Elutasítva'">
+          Elutasít
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div *ngFor="let booking of bookings" class="booking-card">
+    <h2>{{ booking.felhasznaloNev }}</h2>
+    <p><strong>Dátum:</strong> {{ booking.datum | date: 'yyyy-MM-dd' }}</p>
+    <p><strong>Időpont:</strong> {{ booking.kezdesiIdo }} - {{ booking.befejezesiIdo }}</p>
+    <p>
+      <strong>Státusz:</strong>
+      <span [ngClass]="booking.statusz.toLowerCase()" class="status">
+        {{ booking.statusz }}
+      </span>
+    </p>
+    <button (click)="elutasitFoglalas(booking.id)"
+            [disabled]="booking.statusz === 'Elutasítva'"
+            [class.disabled]="booking.statusz === 'Elutasítva'">
+      Elutasítás
+    </button>
+  </div>
+</div>
+
+<ng-template #noDataTemplate>
+  <p>Nincsenek foglalások ehhez a védőnőhöz.</p>
+</ng-template>
+
+<div *ngIf="errorMessage" class="error-message">
+  <p>{{ errorMessage }}</p>
+</div>

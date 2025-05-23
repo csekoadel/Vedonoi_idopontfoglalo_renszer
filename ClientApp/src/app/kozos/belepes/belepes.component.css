@@ -1,0 +1,72 @@
+div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.main_component {
+  height: 100vh;
+  align-items: center;
+}
+
+span {
+  padding: 5px 5px 5px 5px;
+}
+
+h1 {
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  padding: 15px 15px;
+  font-size: 35px;
+}
+
+mat-form-field {
+  width: 50%;
+  position: relative;
+}
+
+
+mat-form-field .mdc-line-ripple {
+  background-color: black !important;
+  transition: background-color 0.3s ease;
+}
+
+
+mat-form-field:hover .mdc-line-ripple,
+mat-form-field.mat-mdc-focused .mdc-line-ripple {
+  background-color: lightblue !important;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  color: white;
+  background-color: lightblue;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+

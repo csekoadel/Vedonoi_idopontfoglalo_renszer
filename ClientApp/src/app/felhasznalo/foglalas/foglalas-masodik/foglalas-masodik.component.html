@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Szolgáltatás kiválasztása</h1>
+  <div class="service-grid">
+    <mat-card (click)="selectService(service)" *ngFor="let service of services" class="service-card">
+      <mat-card-content>
+        <p>{{ service.name }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="onNext()" [disabled]="!selectedServiceId" color="primary" mat-raised-button>Tovább</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

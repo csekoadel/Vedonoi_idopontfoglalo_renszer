@@ -1,0 +1,41 @@
+<div *ngIf="foglalasaim.length > 0; else noDataTemplate" class="foglalasaim-container">
+  <h1>Foglalásaim</h1>
+  <div class="booking-list">
+    <div *ngFor="let foglalas of foglalasaim" [ngClass]="{ 'rejected': foglalas.statusz === 'Elutasítva' }"
+         class="booking-card">
+      <div class="booking-row">
+        <div class="booking-item">
+          <strong>Dátum:</strong>
+          <span>{{ foglalas.datum | date: 'yyyy-MM-dd' }}</span>
+        </div>
+        <div class="booking-item">
+          <strong>Kezdés:</strong>
+          <span>{{ foglalas.kezdesiIdo }}</span>
+        </div>
+        <div class="booking-item">
+          <strong>Befejezés:</strong>
+          <span>{{ foglalas.befejezesiIdo }}</span>
+        </div>
+        <div class="booking-item">
+          <strong>Státusz:</strong>
+          <span>{{ foglalas.statusz }}</span>
+        </div>
+        <div class="booking-item">
+          <strong>Foglalás időpontja:</strong>
+          <span>{{ foglalas.foglalasIdopontja | date: 'yyyy-MM-dd HH:mm:ss' }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noDataTemplate>
+  <div class="no-data-message">
+    <p>Nincsenek foglalások.</p>
+  </div>
+</ng-template>
+
+<div *ngIf="errorMessage" class="error-message">
+  <mat-icon color="warn">error</mat-icon>
+  <p>{{ errorMessage }}</p>
+</div>

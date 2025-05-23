@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Védőnők listája</h2>
+  <div *ngIf="vedonok.length === 0" class="loading">
+    Betöltés...
+  </div>
+  <div class="vedonok-container">
+    <div *ngFor="let vedono of vedonok" class="vedono-kartya">
+      <img [src]="vedono.profilePicture" class="profile-pic"/>
+      <div class="vedono-fejlec">{{ vedono.nev || 'Név nem elérhető' }}</div>
+      <div class="vedono-leiras">{{ vedono.bio || 'Nincs megadott leírás.' }}</div>
+      <div class="vedono-leiras">{{ vedono.munkahely || 'Nincs megadott munkahely.' }}</div>
+      <div class="vedono-elerhetoseg">
+        <p *ngFor="let elerhetoseg of vedono.elerhetosegiLista">
+          {{ elerhetoseg.hetNapjai }}: {{ elerhetoseg.kezdesiIdo }} - {{ elerhetoseg.befejezesiIdo }}
+        </p>
+      </div>
+      <button (click)="megtekintNaptar(vedono)" color="primary" mat-raised-button>Naptár megtekintése</button>
+    </div>
+  </div>
+</div>

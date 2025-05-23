@@ -1,0 +1,86 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 16px;
+  text-align: center;
+  height: 100vh;
+}
+
+.loading {
+  font-size: 18px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.vedonok-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.vedono-kartya {
+  width: 300px;
+  min-height: 400px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.vedono-fejlec {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vedono-leiras {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.vedono-elerhetoseg {
+  margin-bottom: 15px;
+}
+
+.vedono-elerhetoseg p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+button {
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .vedono-kartya {
+    width: 100%;
+    max-width: 350px;
+  }
+}

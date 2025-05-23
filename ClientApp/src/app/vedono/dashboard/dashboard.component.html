@@ -1,0 +1,54 @@
+<div class="dashboard-container">
+  <h1 class="cim">Dashboard</h1>
+
+  <!-- Fő elrendezés -->
+  <div class="dashboard">
+    <!-- Bal oldali diagramok -->
+    <section class="chart-grid">
+      <div class="stat-card">
+        <h1>Összes foglalás</h1>
+        <canvas [data]="totalBookingsChartData" [options]="chartOptions" baseChart chartType="bar"></canvas>
+      </div>
+      <div class="stat-card">
+        <h1>Heti foglalások</h1>
+        <canvas [data]="weeklyBookingsChartData" [options]="chartOptions" baseChart chartType="bar"></canvas>
+      </div>
+      <div class="stat-card">
+        <h1>Napi foglalások</h1>
+        <canvas [data]="dailyBookingsChartData" [options]="chartOptions" baseChart chartType="bar"></canvas>
+      </div>
+      <div class="stat-card">
+        <h1>Egyedi szülők száma</h1>
+        <canvas [data]="uniqueParentsChartData" [options]="chartOptions" baseChart chartType="bar"></canvas>
+      </div>
+    </section>
+
+    <!-- Jobb oldali oszlop: Foglalások -->
+    <aside class="side-section">
+      <section class="bookings">
+        <h1 class="cim">{{ viewMode === 'daily' ? 'Napi Foglalások' : 'Heti Foglalások' }}</h1>
+        <button (click)="toggleViewMode()">Váltás {{ viewMode === 'daily' ? 'Heti' : 'Napi' }} nézetre</button>
+        <table *ngIf="(viewMode === 'daily' ? dailyBookings : weeklyBookings).length > 0; else noBookings"
+               class="booking-table">
+          <thead>
+          <tr>
+            <th>Időpont</th>
+            <th>Anyuka neve</th>
+            <th>Szolgáltatás</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let booking of (viewMode === 'daily' ? dailyBookings : weeklyBookings)">
+            <td>{{ booking.time }}</td>
+            <td>{{ booking.name }}</td>
+            <td>{{ booking.service ? booking.service : 'N/A' }}</td>
+          </tr>
+          </tbody>
+        </table>
+        <ng-template #noBookings>
+          <p>Nincs megjeleníthető foglalás a mai napra.</p>
+        </ng-template>
+      </section>
+    </aside>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.div-flex {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.main_component {
+  height: 100vh;
+}
+
+form div {
+  padding: 5px 5px 5px 5px;
+}
+
+form {
+  display: inline-grid;
+  width: 50%;
+  align-self: center;
+}
+
+.subForm {
+  width: 100%;
+  display: inline-grid;
+}
+
+.buttons {
+  padding: 5px;
+}
+
+h1 {
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  padding: 15px 15px;
+  font-size: 35px;
+}

@@ -1,0 +1,96 @@
+.bookings-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  height: 100vh;
+}
+
+h1 {
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  padding: 10px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  display: table;
+}
+
+.bookings-table th, .bookings-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.bookings-table th {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.bookings-table .status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status.confirmed {
+  background-color: #c8e6c9;
+  color: #388e3c;
+}
+
+.status.pending {
+  background-color: #ffe0b2;
+  color: #f57c00;
+}
+
+.status.cancelled {
+  background-color: #ffcdd2;
+  color: #d32f2f;
+}
+
+.booking-card {
+  display: none;
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking-card h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.booking-card p {
+  margin: 5px 0;
+}
+
+.status {
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 3px 6px;
+}
+
+@media (max-width: 768px) {
+  .bookings-table {
+    display: none;
+  }
+
+  .booking-card {
+    display: block;
+  }
+}
+
+button:disabled,
+button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+

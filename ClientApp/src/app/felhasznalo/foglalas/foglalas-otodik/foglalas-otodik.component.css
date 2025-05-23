@@ -1,0 +1,96 @@
+body {
+  background: linear-gradient(135deg, #f3f4f6, #e3e8f0);
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+p strong {
+  font-weight: 600;
+  color: #333;
+}
+
+.icon {
+  font-size: 20px;
+  color: #4a90e2;
+}
+
+.error-message {
+  background-color: #ffe5e5;
+  color: #c62828;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.error-message h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.error-message p {
+  font-size: 18px;
+}
+
+.icon {
+  font-size: 20px;
+  color: lightblue;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+p:hover .icon {
+  color: lightgray;
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

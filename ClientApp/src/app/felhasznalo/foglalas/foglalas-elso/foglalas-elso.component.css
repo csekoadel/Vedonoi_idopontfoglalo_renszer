@@ -1,0 +1,74 @@
+.container {
+  max-width: 600px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1 {
+  color: black;
+  font-family: 'Dancing Script', cursive;
+  padding: 15px;
+  font-size: 35px;
+  text-align: center;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.action-button {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .form-field, .action-button {
+    max-width: 100%;
+  }
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline {
+  border-color: #90caf9 !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline-thick {
+  border-color: #90caf9 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-color: #e3f2fd !important;
+}
+
+.mat-select {
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.mat-select:hover {
+  background-color: #f0f8ff;
+}
+
+.mat-option {
+  background-color: #ffffff;
+}
+
+.mat-option:hover {
+  background-color: #e3f2fd;
+}
+

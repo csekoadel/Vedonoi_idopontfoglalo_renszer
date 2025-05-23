@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Belépés</title>
+</head>
+<body>
+
+<div class="main_component">
+  <h1>Belépés</h1>
+  <mat-form-field appearance="fill" class="custom-email-field">
+    <mat-label>Email:</mat-label>
+    <input [formControl]="email" matInput type="text">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="custom-password-field">
+    <mat-label>Jelszó:</mat-label>
+    <input [formControl]="password" matInput type="password">
+  </mat-form-field>
+
+  <span>
+        <span><button (click)="login()" mat-raised-button>Belépés</button></span>
+        <span><button [routerLink]="'/regisztracio'" mat-raised-button>Regisztráció</button></span>
+    </span>
+</div>
+</body>
+</html>

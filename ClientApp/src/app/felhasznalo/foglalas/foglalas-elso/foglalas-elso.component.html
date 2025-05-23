@@ -1,0 +1,16 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="32px">
+  <h1>Kinek foglalsz?</h1>
+
+  <mat-form-field appearance="outline" class="full-width modern-form-field">
+    <mat-label>Kiválasztás</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let recipient of recipients" [value]="recipient">
+        {{ recipient }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button routerLink="/foglalas-masodik">
+    Tovább
+  </button>
+</div>

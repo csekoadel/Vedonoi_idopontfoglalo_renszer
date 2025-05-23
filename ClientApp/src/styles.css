@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+html, body {
+  height: 100%;
+  font-family: 'Dancing Script', cursive;
+}
+
+body {
+  margin: 0;
+}
+
+.main_component {
+  height: 100vh;
+}
+
+.mdc-line-ripple {
+  background-color: black !important;
+  transition: background-color 0.3s ease;
+}
+
+mat-form-field:hover .mdc-line-ripple {
+  background-color: lightblue !important;
+}
+
+mat-form-field.mat-mdc-focused .mdc-line-ripple {
+  background-color: lightblue !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border-bottom-color: lightblue !important;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled):hover .mdc-line-ripple::after {
+  border-bottom-color: lightblue !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-line-ripple::after {
+  border-bottom-color: lightblue !important;
+}
+
+:host ::ng-deep .mat-mdc-form-field .mdc-floating-label {
+  color: black !important;
+  transition: color 0.3s ease;
+}
+
+:host ::ng-deep .mat-mdc-form-field.mat-form-field-invalid .mdc-floating-label {
+  color: red !important;
+}
+
+.mdc-floating-label {
+  color: black !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--invalid .mdc-floating-label {
+  color: red !important;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  color: black !important;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  color: white !important;
+  background-color: lightblue !important;
+}

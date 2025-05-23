@@ -1,0 +1,21 @@
+<body>
+<h1>Időpontok csoportosítva:</h1>
+
+<ng-container *ngFor="let nap of simplifiedData">
+  <div class="nap-container">
+    <h2 class="datum">
+      {{ getHungarianDate(nap.datum) }}
+    </h2>
+    <div class="idopontok">
+      <div *ngFor="let elerhetoseg of nap.idopontok" class="idopont-card">
+        <p><strong>Időpont:</strong> {{ elerhetoseg?.kezdesiIdo }} - {{ elerhetoseg?.befejezesiIdo }}</p>
+        <p><strong>Foglaló neve:</strong> {{ elerhetoseg?.felhasznaloNev }}</p>
+        <p><strong>Szolgáltatás:</strong> {{ elerhetoseg?.szolgaltatasNev }}</p>
+        <p><strong>Indok:</strong> {{ elerhetoseg?.foglalasIndok }}</p>
+        <span *ngIf="elerhetoseg?.statusz === 1" class="foglalt">(Foglalt)</span>
+        <span *ngIf="elerhetoseg?.statusz === 0" class="szabad">(Szabad)</span>
+      </div>
+    </div>
+  </div>
+</ng-container>
+</body>

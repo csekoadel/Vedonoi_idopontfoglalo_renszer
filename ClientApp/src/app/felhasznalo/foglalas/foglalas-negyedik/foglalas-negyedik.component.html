@@ -1,0 +1,38 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button (click)="loadPreviousWeek()" class="prev-week">Előző hét</button>
+    <h2>{{ currentWeek }}</h2>
+    <button (click)="loadNextWeek()" class="next-week">Következő hét</button>
+  </div>
+  <div class="calendar-days">
+    <div *ngFor="let day of weekDays" class="day">
+      <h3 class="day-header">
+        {{ day.date | date: 'yyyy.MM.dd' }}
+      </h3>
+      <div *ngFor="let idopont of getFilteredTimeSlotsByDay(day.day)"
+           [class.busy]="idopont.statusz === 1"
+           [class.free]="idopont.statusz === 0"
+           class="time-slot">
+        <span class="time-label">
+          {{ idopont.kezdesiIdo | date: 'HH:mm' }} - {{ idopont.befejezesiIdo | date: 'HH:mm' }}
+        </span>
+        <ng-container *ngIf="!idopont.showIndok; else indokTemplate">
+          <button (click)="toggleIndok(idopont); setSelectedDate(day.date)" [disabled]="idopont.statusz === 1"
+                  color="primary"
+                  mat-raised-button>
+            {{ idopont.statusz === 1 ? 'Foglalt' : 'Foglalás' }}
+          </button>
+        </ng-container>
+        <ng-template #indokTemplate>
+          <div class="indok-rublika">
+            <textarea [(ngModel)]="idopont.foglalasIndok" placeholder="Írj indokot a foglaláshoz"></textarea>
+            <button (click)="foglalas(idopont)" color="primary"
+                    mat-raised-button>
+              Foglalás megerősítése
+            </button>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

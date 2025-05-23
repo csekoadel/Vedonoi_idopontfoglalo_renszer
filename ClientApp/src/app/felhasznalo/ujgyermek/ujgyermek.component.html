@@ -1,0 +1,39 @@
+<div class="new-child-container">
+  <h1>Új Gyermek Felvétele</h1>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="childForm">
+    <mat-form-field appearance="fill" class="form-group">
+      <input formControlName="vezeteknev" id="vezeteknev" matInput placeholder="Gyermek Vezetéknév" type="text"/>
+      <mat-error *ngIf="isInvalidAndTouched('vezeteknev')">
+        A vezetéknév megadása kötelező, legalább 2 karakter hosszúnak kell lennie.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <input formControlName="keresztnev" id="keresztnev" matInput placeholder="Gyermek Keresztnév" type="text"/>
+      <mat-error *ngIf="isInvalidAndTouched('keresztnev')">
+        A keresztnév megadása kötelező, legalább 2 karakter hosszúnak kell lennie.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <input formControlName="szuletesiDatum" id="szuletesiDatum" matInput placeholder="Születési Dátum" type="date"/>
+      <mat-error *ngIf="isInvalidAndTouched('szuletesiDatum')">
+        A születési dátum megadása kötelező.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-select formControlName="neme" id="neme" placeholder="Nem">
+        <mat-option disabled value="">Válasszon...</mat-option>
+        <mat-option value="Ferfi">Fiú</mat-option>
+        <mat-option value="No">Lány</mat-option>
+      </mat-select>
+      <mat-error *ngIf="isInvalidAndTouched('neme')">
+        Kérjük, válassza ki a nemet.
+      </mat-error>
+    </mat-form-field>
+
+    <button [disabled]="childForm.invalid" color="primary" mat-raised-button type="submit">Mentés</button>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div *ngIf="foglalas; else errorTemplate" class="container">
+  <div class="card">
+    <h2><span class="icon"></span> Foglalás részletei</h2>
+    <p><span class="icon"><i class="fa-solid fa-id-card"></i></span> <strong>Foglalás
+      azonosító:</strong> {{ foglalas.id }}</p>
+    <p><span class="icon"><i class="fa-solid fa-user"></i></span> <strong>Foglaló
+      neve:</strong> {{ foglalas.felhasznaloNev }}</p>
+    <p><span class="icon"><i class="fa-solid fa-envelope"></i></span> <strong>Foglaló
+      email:</strong> {{ foglalas.felhasznaloEmail }}</p>
+    <p><span class="icon"><i class="fa-solid fa-calendar"></i></span>
+      <strong>Dátum:</strong> {{ foglalas.datum | date: 'yyyy-MM-dd' }}</p>
+    <p><span class="icon"><i class="fa-solid fa-clock"></i></span> <strong>Kezdés:</strong> {{ foglalas.kezdesiIdo }}
+    </p>
+    <p><span class="icon"><i class="fa-solid fa-hourglass-end"></i></span>
+      <strong>Befejezés:</strong> {{ foglalas.befejezesiIdo }}</p>
+    <p><span class="icon"><i class="fa-solid fa-file-alt"></i></span> <strong>Státusz:</strong> {{ foglalas.statusz }}
+    </p>
+    <p><span class="icon"><i class="fa-solid fa-stopwatch"></i></span> <strong>Foglalás
+      időpontja:</strong> {{ foglalas.foglalasIdopontja | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+  </div>
+</div>
+<ng-template #errorTemplate>
+  <div class="error-message">
+    <h2>Hiba</h2>
+    <p>{{ errorMessage }}</p>
+  </div>
+</ng-template>

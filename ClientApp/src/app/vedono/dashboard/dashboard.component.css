@@ -1,0 +1,149 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+.stat-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+}
+
+.stat-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.stat-card canvas {
+  width: 100%;
+  max-width: 100%;
+  height: 300px !important;
+}
+
+.side-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 20px;
+}
+
+.bookings {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  height: 100%;
+  width: 500px;
+}
+
+.reminders {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  grid-column: span 2;
+  margin-top: 30px;
+}
+
+
+.reminders h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.reminders ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.reminders li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .side-section {
+    width: 100%;
+  }
+
+  .reminders {
+    grid-column: span 1;
+    margin: 20px 0;
+  }
+}
+
+td[_ngcontent-ng-c716692869] {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  padding: 8px;
+}
+
+h1 {
+  color: black !important;
+  font-family: 'Dancing Script', cursive !important;
+  padding: 25px !important;
+  font-size: 22px !important;
+  text-align: center !important;
+}
+
+.cim {
+  color: black !important;
+  font-family: 'Dancing Script', cursive !important;
+  padding: 15px !important;
+  font-size: 35px !important;
+  text-align: center !important;
+}
+
+.stat-card[_ngcontent-ng-c1366615269] {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #0000001a;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 350px;
+}
+
+
+
